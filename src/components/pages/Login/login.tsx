@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import api from "../../../utils/api";
+import fieldsOptions from "./fields.json";
 
 import logo from "../../../assets/logos/logo_unkle_version.svg";
 
@@ -23,28 +24,7 @@ function Login() {
   let navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [fields, setFields] = useState<Field[]>([
-    {
-      id: 0,
-      type: "email",
-      name: "email",
-      label: "Votre adresse e-mail",
-      placeholder: "Tapez votre adresse e-mail",
-      regexp: /^[a-zA-Z0-9-.]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/,
-      errorDisplayed: "Veuillez entrer une adresse e-mail correcte !",
-      error: false,
-    },
-    {
-      id: 1,
-      type: "password",
-      name: "password",
-      label: "Votre mot de passe",
-      placeholder: "Tapez votre mot de passe",
-      regexp: `^.{1,}$`,
-      errorDisplayed: "Veuillez entrer votre mot de passe !",
-      error: false,
-    },
-  ]);
+  const [fields, setFields] = useState<Field[]>(fieldsOptions);
 
   const checkFieldValidity = (currentField: Field, value: string) => {
     const regexp = new RegExp(currentField.regexp);
