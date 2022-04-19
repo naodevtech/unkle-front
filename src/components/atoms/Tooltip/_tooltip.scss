@@ -1,0 +1,46 @@
+@import "../../../sass/base/theme";
+@import "../../../sass/base/typography";
+
+.tooltip {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: $basic-light;
+  font-size: 0.8em;
+  border-radius: 0.4rem;
+  font-family: $brand-font-primary-bold;
+  font-weight: 600;
+  margin-top: -15px;
+  margin-bottom: 0.8em;
+  text-align: left;
+  line-height: 1.5em;
+  padding: 0 1em;
+  &-info {
+    background-color: $primary;
+    .tooltip-up-triangle {
+      &-info {
+        border-bottom: 20px solid $primary;
+      }
+    }
+  }
+  &-error {
+    background-color: $error;
+    .tooltip-up-triangle {
+      &--error {
+        border-bottom: 20px solid $error;
+      }
+    }
+  }
+  .tooltip-up-triangle {
+    width: 0;
+    height: 0;
+    margin-top: -43px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+  }
+  img {
+    height: 20px;
+    margin-right: 1em;
+  }
+}

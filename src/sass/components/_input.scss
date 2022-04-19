@@ -8,16 +8,22 @@ $this: ".input";
   height: 65px;
   width: 340px;
   background-color: #f7f7f7;
-  border: none;
   font-size: 15px;
   font-weight: 700;
-  padding-left: 1em;
+  padding: 0 12px;
   border-radius: 7px;
+  border: none;
   margin: 1.3em 0;
   margin-bottom: 2em;
   color: $secondary;
+  background-size: 20px;
+  background-repeat: no-repeat;
   &::placeholder {
     color: rgb(167, 167, 167);
+  }
+  &--icon-right--error {
+    background-image: url("../../assets/iconography/error.png");
+    background-position: calc(100% - 12px) center;
   }
   @include media(tablet) {
     height: 60px;

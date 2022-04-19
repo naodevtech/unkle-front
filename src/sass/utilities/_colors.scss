@@ -39,5 +39,9 @@
 }
 
 .primary-border {
-  border: 3px solid $primary;
+  border: 2px solid $primary !important;
+}
+
+.error-border {
+  border: 2px solid $error !important;
 }
