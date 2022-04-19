@@ -68,7 +68,8 @@ function Login() {
       await api.post("/login", credentials);
       navigate(`/dashboard`);
     } catch (error: any) {
-      setError(error.response.data.message);
+      console.log(error.response);
+      if (error.response.data.message) setError(error.response.data.message);
     }
   };
 
