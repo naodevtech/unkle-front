@@ -1,0 +1,43 @@
+@import "../base/theme";
+
+.primary-color {
+  color: $primary;
+}
+.secondary-color {
+  color: $secondary;
+}
+.secondary-light-color {
+  color: $secondary-light;
+}
+
+.basic-light-color {
+  color: $basic-light;
+}
+
+.basic-dark-color {
+  color: $basic-dark;
+}
+
+.bg-primary {
+  background-color: $primary;
+}
+
+.bg-secondary {
+  background-color: $secondary;
+}
+
+.bg-secondary-light {
+  background-color: $secondary-light;
+}
+
+.bg-basic-light {
+  background-color: $basic-light;
+}
+
+.bg-basic-dark-color {
+  background-color: $basic-dark;
+}
+
+.primary-border {
+  border: 3px solid $primary;
+}

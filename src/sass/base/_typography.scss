@@ -1,0 +1,39 @@
+/* ******** GOTHAM LIGHT ******** */
+
+@font-face {
+  font-family: "Gotham-light";
+  src: url("../../assets/webfonts/gotham/GothamLight.ttf") format("truetype");
+}
+
+$brand-font-primary-light: "Gotham-light";
+
+/* ******** GOTHAM MEDIUM ******** */
+
+@font-face {
+  font-family: "Gotham-medium";
+  src: url("../../assets/webfonts/gotham/GothamMedium.ttf") format("truetype");
+}
+
+$brand-font-primary-medium: "Gotham-medium";
+
+/* ******** GOTHAM BOLD ******** */
+
+@font-face {
+  font-family: "Gotham-bold";
+  src: url("../../assets/webfonts/gotham/Gotham-Bold.otf") format("opentype");
+}
+
+$brand-font-primary-bold: "Gotham-bold";
+
+/* ******** POPPINS BLACK ******** */
+
+@font-face {
+  font-family: "Poppins-Black";
+  src: url("../../assets/webfonts/poppins/Poppins-Black.ttf") format("truetype");
+}
+
+$brand-font-secondary-bold: "Poppins-Black";
+
+/* ******** MONTSERRAT ******** */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
