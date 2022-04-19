@@ -1,12 +1,29 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import api from "../../../utils/api";
 
 import logo from "../../../assets/logos/logo_unkle_version.svg";
 
 import Tooltip from "../../atoms/Tooltip/tooltip";
 import "./_login.scss";
 
+export interface Field {
+  id: number;
+  type: string;
+  name: string;
+  label: string;
+  placeholder: string;
+  regexp: RegExp | string;
+  errorDisplayed: string;
+  error: boolean;
+}
+
 function Login() {
-  const [fields, setFields] = useState([
+  let navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [fields, setFields] = useState<Field[]>([
     {
       id: 0,
       type: "email",
@@ -29,7 +46,7 @@ function Login() {
     },
   ]);
 
-  const checkFieldValidity = (currentField: any, value: string) => {
+  const checkFieldValidity = (currentField: Field, value: string) => {
     const regexp = new RegExp(currentField.regexp);
     if (!regexp.test(value)) {
       setFields(
@@ -46,8 +63,29 @@ function Login() {
     }
   };
 
-  const handleChange = (currentField: any, value: string) => {
+  const handleChangeValue = (currentField: Field, value: string) => {
     checkFieldValidity(currentField, value);
+    switch (currentField.name) {
+      case "email":
+        setEmail(value);
+        break;
+      case "password":
+        setPassword(value);
+        break;
+      default:
+        break;
+    }
+  };
+
+  const login = async (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    credentials: any
+  ) => {
+    e.preventDefault();
+    try {
+      await api.post("/login", credentials);
+      navigate(`/dashboard`);
+    } catch {}
   };
 
   return (
@@ -69,7 +107,7 @@ function Login() {
                       type={field.type}
                       placeholder={field.placeholder}
                       onChange={(e) => {
-                        handleChange(field, e.target.value);
+                        handleChangeValue(field, e.target.value);
                       }}
                     />
                     {field.error ? (
@@ -79,7 +117,12 @@ function Login() {
                 );
               })
             : null}
-          <button className="btn btn--primary">Connexion</button>
+          <button
+            className="btn btn--primary"
+            onClick={(e) => login(e, { email, password })}
+          >
+            Connexion
+          </button>
         </form>
       </div>
     </div>
