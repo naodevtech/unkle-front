@@ -2,7 +2,7 @@
 @import "../../../sass/base/typography";
 
 .tooltip {
-  height: 40px;
+  height: 50px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -11,7 +11,7 @@
   border-radius: 0.4rem;
   font-family: $brand-font-primary-bold;
   font-weight: 600;
-  margin-top: -15px;
+  margin-top: -20px;
   margin-bottom: 0.8em;
   text-align: left;
   line-height: 1.5em;
