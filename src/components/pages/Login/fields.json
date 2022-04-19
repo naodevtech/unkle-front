@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "type": "email",
+    "name": "email",
+    "label": "Votre adresse e-mail",
+    "placeholder": "Tapez votre adresse e-mail",
+    "regexp": "/^[a-zA-Z0-9-.]+@(?:[a-zA-Z0-9]+)+[A-Za-z]+$/",
+    "errorDisplayed": "Veuillez entrer une adresse e-mail correcte !",
+    "error": false
+  },
+  {
+    "id": 1,
+    "type": "password",
+    "name": "password",
+    "label": "Votre mot de passe",
+    "placeholder": "Tapez votre mot de passe",
+    "regexp": "^.{1,}$",
+    "errorDisplayed": "Veuillez entrer votre mot de passe !",
+    "error": false
+  }
+]
