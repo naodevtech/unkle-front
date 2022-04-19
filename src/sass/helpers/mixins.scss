@@ -1,0 +1,32 @@
+@mixin media($breakpoint) {
+  @if $breakpoint==miniphone {
+    @media only screen and (min-width: 0px) and (max-width: 360px) {
+      @content;
+    }
+  }
+  @if $breakpoint==smartphone {
+    @media only screen and (min-width: 360px) and (max-width: 600px) {
+      @content;
+    }
+  }
+  @if $breakpoint==tablet {
+    @media only screen and (min-width: 600px) {
+      @content;
+    }
+  }
+  @if $breakpoint==laptop {
+    @media only screen and (min-width: 1024px) {
+      @content;
+    }
+  }
+  @if $breakpoint==minilaptop {
+    @media only screen and (min-width: 1024px) and (max-width: 1228px) {
+      @content;
+    }
+  }
+  @if $breakpoint==desktop {
+    @media only screen and (min-width: 1850px) {
+      @content;
+    }
+  }
+}
