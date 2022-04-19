@@ -4,9 +4,10 @@ import { useNavigate } from "react-router-dom";
 import api from "../../../utils/api";
 import fieldsOptions from "./fields.json";
 
-import logo from "../../../assets/logos/logo_unkle_version.svg";
-
 import Tooltip from "../../atoms/Tooltip/tooltip";
+import Alert from "../../atoms/Alert/alert";
+
+import logo from "../../../assets/logos/logo_unkle_version.svg";
 import "./_login.scss";
 
 export interface Field {
@@ -24,6 +25,7 @@ function Login() {
   let navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const [fields, setFields] = useState<Field[]>(fieldsOptions);
 
   const checkFieldValidity = (currentField: Field, value: string) => {
@@ -59,18 +61,25 @@ function Login() {
 
   const login = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    credentials: any
+    credentials: Object
   ) => {
     e.preventDefault();
     try {
       await api.post("/login", credentials);
       navigate(`/dashboard`);
-    } catch {}
+    } catch (error: any) {
+      setError(error.response.data.message);
+    }
   };
 
   return (
     <div className="container_responsive">
       <div className="container_login">
+        {error ? (
+          <div className="box_alert">
+            <Alert type={"error"} message={error} />
+          </div>
+        ) : null}
         <img src={logo} alt="logo_unkle" />
         <form>
           {fields
