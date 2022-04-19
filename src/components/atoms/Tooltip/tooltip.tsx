@@ -9,8 +9,8 @@ export interface ITooltip {
 
 const Tooltip: React.FunctionComponent<ITooltip> = ({ type, message }) => {
   return (
-    <div className="tooltip tooltip-error">
-      <div className="tooltip-up-triangle tooltip-up-triangle--error"></div>
+    <div className={`tooltip tooltip--${type}`}>
+      <div className={`tooltip-up-triangle tooltip-up-triangle--${type}`}></div>
       <span>{message}</span>
     </div>
   );

@@ -30,6 +30,14 @@
       font-size: 15px;
     }
   }
+  &-xs {
+    font-family: $brand-font-primary-bold;
+    font-size: 12px;
+    &--light {
+      font-family: $brand-font-primary-medium;
+      font-size: 12px;
+    }
+  }
 }
 
 .text-center {

@@ -1,0 +1,18 @@
+@import "../../../sass/base/theme";
+@import "../../../sass/helpers/mixins";
+
+.alert {
+  height: 80px;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  border-radius: 0.25rem;
+  &--error {
+    background-color: $error-light;
+    border: 1px solid #f5c2c7;
+    color: $error;
+  }
+}
