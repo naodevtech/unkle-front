@@ -1,0 +1,22 @@
+@import "../base/typography";
+@import "../base/theme";
+
+$this: ".btn";
+
+#{$this} {
+  height: 60px;
+  width: 100%;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  &--primary {
+    background-color: $primary;
+    color: white;
+    font-size: 0.9em;
+    font-family: $brand-font-primary-bold;
+    &:hover {
+      background-color: $primary-shadow;
+    }
+  }
+}

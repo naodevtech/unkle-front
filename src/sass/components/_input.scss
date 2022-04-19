@@ -1,0 +1,25 @@
+@import "../base/typography";
+@import "../base/theme";
+@import "../helpers/mixins.scss";
+
+$this: ".input";
+
+#{$this} {
+  height: 65px;
+  width: 340px;
+  background-color: #f7f7f7;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+  padding-left: 1em;
+  border-radius: 7px;
+  margin: 1.3em 0;
+  margin-bottom: 2em;
+  color: $secondary;
+  &::placeholder {
+    color: rgb(167, 167, 167);
+  }
+  @include media(tablet) {
+    height: 60px;
+  }
+}

@@ -1,0 +1,22 @@
+.container_login {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1em;
+  img {
+    height: 80px;
+    margin-bottom: 3em;
+  }
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .box_input {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
