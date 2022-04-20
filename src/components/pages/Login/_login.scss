@@ -17,9 +17,11 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 1em;
     .box_input {
       display: flex;
       flex-direction: column;
+      width: 320px;
     }
   }
 }
