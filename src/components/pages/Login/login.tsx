@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 import api from "../../../utils/api";
 import fieldsOptions from "./fields.json";
@@ -9,6 +11,12 @@ import Alert from "../../atoms/Alert/alert";
 
 import logo from "../../../assets/logos/logo_unkle_version.svg";
 import "./_login.scss";
+
+import {
+  authSelector,
+  setAuthFailed,
+  setAuthSuccess,
+} from "../../../store/auth/authSlice";
 
 export interface Field {
   id: number;
@@ -25,8 +33,9 @@ function Login() {
   let navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
   const [fields, setFields] = useState<Field[]>(fieldsOptions);
+  const dispatch = useDispatch();
+  const { error } = useSelector(authSelector);
 
   const checkFieldValidity = (currentField: Field, value: string) => {
     const regexp = new RegExp(currentField.regexp);
@@ -65,10 +74,11 @@ function Login() {
   ) => {
     e.preventDefault();
     try {
-      await api.post("/login", credentials);
+      const user = await api.post("/login", credentials);
+      dispatch(setAuthSuccess(user.data.data));
       navigate(`/dashboard`);
     } catch (error: any) {
-      setError(error.response.data.message);
+      dispatch(setAuthFailed(error.response.data.message));
     }
   };
 
