@@ -3,20 +3,20 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
-import api from "../../../utils/api";
+import api from "../../utils/api";
 import fieldsOptions from "./fields.json";
 
-import Tooltip from "../../atoms/Tooltip/tooltip";
-import Alert from "../../atoms/Alert/alert";
+import Tooltip from "../../components/atoms/Tooltip/tooltip";
+import Alert from "../../components/atoms/Alert/alert";
 
-import logo from "../../../assets/logos/logo_unkle_version.svg";
+import logo from "../../assets/logos/logo_unkle_version.svg";
 import "./_login.scss";
 
 import {
   authSelector,
   setAuthFailed,
   setAuthSuccess,
-} from "../../../store/auth/authSlice";
+} from "../../store/auth/authSlice";
 
 export interface Field {
   id: number;
@@ -117,7 +117,7 @@ function Login() {
               })
             : null}
           <button
-            className="btn btn--primary"
+            className="btn--squared btn--squared-primary"
             onClick={(e) => login(e, { email, password })}
           >
             Connexion
