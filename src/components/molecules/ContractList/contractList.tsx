@@ -38,22 +38,20 @@ function ContractList() {
   }, [currentUser, dispatch]);
 
   return (
-    <div className="container_responsive">
-      <div className="container_contract_list">
-        {contracts
-          ? contracts.map((contract) => {
-              return (
-                <Contract
-                  key={contract.id}
-                  icon={contract.icon}
-                  reference={contract.name}
-                  name={contract.name}
-                  status={contract.name}
-                />
-              );
-            })
-          : null}
-      </div>
+    <div className="container_contract_list">
+      {contracts
+        ? contracts.map((contract) => {
+            return (
+              <Contract
+                key={contract.id}
+                icon={contract.icon}
+                reference={contract.name}
+                name={contract.name}
+                status={contract.name}
+              />
+            );
+          })
+        : null}
     </div>
   );
 }
