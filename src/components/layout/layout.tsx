@@ -20,7 +20,6 @@ const Layout = ({ children }: Props) => {
         dispatch(setAuthSuccess(user.data.data));
         return navigate("/dashboard");
       } catch (error: any) {
-        dispatch(setAuthFailed(error.response.data.message));
         return navigate("/login");
       }
     };
