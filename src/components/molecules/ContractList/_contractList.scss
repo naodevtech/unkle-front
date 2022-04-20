@@ -1,0 +1,12 @@
+@import "../../../sass/helpers/mixins";
+
+.container_contract_list {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  @include media(laptop) {
+    justify-content: flex-start;
+  }
+}

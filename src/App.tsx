@@ -2,9 +2,9 @@ import React from "react";
 import { Routes, Route } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 
-import Layout from "./components/layout/layout";
-import Dashboard from "./components/pages/Dashboard/dasboard";
-import Login from "./components/pages/Login/login";
+import Layout from "./layout/layout";
+import Dashboard from "./pages/Dashboard/dasboard";
+import Login from "./pages/Login/login";
 
 function App() {
   return (

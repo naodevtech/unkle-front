@@ -1,0 +1,179 @@
+@import "../../../sass/helpers/mixins.scss";
+@import "../../../sass/base/theme";
+@import "../../../sass/base/typography";
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5em;
+  width: 100%;
+  background: $basic-light;
+  overflow: hidden;
+  @include media(desktop) {
+    width: 1400px;
+  }
+  .box_logo {
+    cursor: pointer;
+    img {
+      height: 30px;
+    }
+  }
+  .nav_burger {
+    width: 30px;
+    height: 24px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    z-index: 143142;
+    @include media(laptop) {
+      display: none;
+    }
+    span {
+      display: block;
+      position: absolute;
+      height: 3.5px;
+      width: 100%;
+      border-radius: 8px;
+      opacity: 1;
+      left: 0;
+      background-color: $primary;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: 0.25s ease-in-out;
+      -moz-transition: 0.25s ease-in-out;
+      -o-transition: 0.25s ease-in-out;
+      transition: 0.25s ease-in-out;
+      &:nth-child(1) {
+        top: 0px;
+      }
+      &:nth-child(2) {
+        top: 10px;
+      }
+      &:nth-child(3) {
+        top: 10px;
+      }
+      &:nth-child(4) {
+        top: 20px;
+      }
+    }
+  }
+  .nav_burger.open {
+    position: fixed;
+    top: 40px;
+    right: 30px;
+    z-index: 143143;
+  }
+  .nav_burger.open span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+    background-color: $basic-light;
+  }
+  .nav_burger.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .nav_burger.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  .nav_burger.open span:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+  .overlay {
+    height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 143141;
+    top: 0;
+    left: 0;
+    background-color: $basic-light;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    @include media(laptop) {
+      display: none;
+    }
+    .links {
+      position: relative;
+      top: 150px;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      @include media(miniphone) {
+        top: 15%;
+      }
+      a {
+        padding: 20px 40px;
+        font-size: 1.2em;
+        color: $primary;
+        display: block;
+        font-family: $brand-font-primary-bold;
+        font-weight: 700;
+        cursor: pointer;
+        text-decoration: none;
+        &:hover {
+          color: $primary;
+          text-decoration: underline;
+        }
+      }
+      Button {
+        span {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+  .nav_links_desktop {
+    display: none;
+    @include media(laptop) {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    h2 {
+      cursor: pointer;
+      margin: 0 1em;
+      &:hover {
+        text-decoration: underline;
+        color: $primary;
+      }
+    }
+    @include media(laptop) {
+      font-size: 0.6em;
+    }
+  }
+  span {
+    margin: 0 1em;
+  }
+  .avatar {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 4rem;
+    border: 3px solid $primary;
+  }
+}

@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
-import { setAuthFailed, setAuthSuccess } from "../../store/auth/authSlice";
+import Nav from "../components/organisms/Nav/nav";
+import { setAuthSuccess } from "../store/auth/authSlice";
 
-import api from "../../utils/api";
+import api from "../utils/api";
 
 type Props = {
   children: React.ReactNode;
@@ -28,6 +29,7 @@ const Layout = ({ children }: Props) => {
 
   return (
     <>
+      <Nav />
       <main>{children}</main>
     </>
   );
