@@ -43,5 +43,9 @@ $this: ".btn";
         background-color: $primary-shadow;
       }
     }
+    &--mobile {
+      height: 40px;
+      width: 190px;
+    }
   }
 }

@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import Layout from "./layout/layout";
 import Dashboard from "./pages/Dashboard/dasboard";
 import Login from "./pages/Login/login";
+import ContractDetails from "./pages/ContractDetails/contractDetails";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/contract/:id" element={<ContractDetails />} />
           </Routes>
         </Layout>
       </BrowserRouter>

@@ -1,9 +1,13 @@
+@import "../helpers/mixins";
+
 .card {
-  background-color: #fff;
+  background-color: rgba(248, 247, 247, 0.801);
   height: 320px;
-  width: 260px;
+  width: 400px;
   border-radius: 10px;
   margin: 1em;
   padding: 2em;
-  border: 1px solid $disabled;
+  @include media(tablet) {
+    width: 300px;
+  }
 }
