@@ -23,7 +23,6 @@ function ContractList() {
       const contractsFetched = await api.get("/contracts");
       dispatch(setContractsSuccess(contractsFetched.data.data));
     };
-
     const getAllContractsClient = async (userId: string | undefined) => {
       const contractsFetched = await api.get(`/userContracts/${userId}`);
       dispatch(setContractsSuccess(contractsFetched.data.data));

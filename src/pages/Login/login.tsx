@@ -100,7 +100,7 @@ function Login() {
                     <input
                       className={`input ${
                         field.error
-                          ? "input--icon-right--error error-border"
+                          ? "input--icon-right--error error-border placeholder--error"
                           : "null"
                       }`}
                       type={field.type}
