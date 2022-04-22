@@ -1,8 +1,9 @@
 .card {
-  background-color: #f8f7f7;
+  background-color: #fff;
   height: 320px;
   width: 260px;
   border-radius: 10px;
   margin: 1em;
   padding: 2em;
+  border: 1px solid $disabled;
 }

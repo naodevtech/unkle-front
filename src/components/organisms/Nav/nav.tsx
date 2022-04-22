@@ -1,17 +1,21 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
+import api from "../../../utils/api";
+
 import Logo from "../../../assets/logos/logo_unkle_version.svg";
-import { authSelector } from "../../../store/auth/authSlice";
+import { authSelector, setLogOut } from "../../../store/auth/authSlice";
 
 import "./_nav.scss";
 
 const Nav = () => {
+  let navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { currentUser } = useSelector(authSelector);
   const [open, setOpen] = useState(true);
   const [heightNav, setHeightNav] = useState("0%");
-  const { currentUser } = useSelector(authSelector);
 
   const toggleNav = () => {
     setOpen(!open);
@@ -32,6 +36,12 @@ const Nav = () => {
       top: 0,
       behavior: "smooth",
     });
+  };
+
+  const logout = async () => {
+    await api.post("/logout");
+    navigate(`/login`);
+    dispatch(setLogOut());
   };
 
   return (
@@ -63,8 +73,10 @@ const Nav = () => {
                 Tous les utilisateurs
               </NavLink>
             ) : null}
-
-            <button className="btn-nav--logout btn-nav--mobile primary-color primary-border">
+            <button
+              className="btn--rounded btn--rounded-primary"
+              onClick={() => logout()}
+            >
               <span className="body-s--bold">Deconnexion</span>
             </button>
           </div>
@@ -78,7 +90,10 @@ const Nav = () => {
           {currentUser && (
             <span className="body-s">Hello {currentUser.firstname} 👋</span>
           )}
-          <button className="btn--rounded btn--rounded-primary">
+          <button
+            className="btn--rounded btn--rounded-primary"
+            onClick={() => logout()}
+          >
             <span className="body-s--bold">Deconnexion</span>
           </button>
         </div>

@@ -11,7 +11,7 @@ $this: ".input";
   font-size: 15px;
   font-weight: 700;
   padding: 0 12px;
-  border-radius: 7px;
+  border-radius: 3px;
   border: none;
   margin: 1.3em 0;
   margin-bottom: 2em;
@@ -19,7 +19,7 @@ $this: ".input";
   background-size: 20px;
   background-repeat: no-repeat;
   &::placeholder {
-    color: rgb(167, 167, 167);
+    color: rgb(211, 211, 211);
   }
   &--icon-right--error {
     background-image: url("../../assets/iconography/error.png");
@@ -27,5 +27,24 @@ $this: ".input";
   }
   @include media(tablet) {
     height: 60px;
+  }
+  &:focus {
+    border-bottom: 2px solid $primary;
+    &::placeholder {
+      color: $primary-light;
+    }
+  }
+}
+
+.placeholder {
+  &--error {
+    &::placeholder {
+      color: $error;
+    }
+    &:focus {
+      &::placeholder {
+        color: $error;
+      }
+    }
   }
 }

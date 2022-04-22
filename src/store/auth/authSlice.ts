@@ -32,7 +32,7 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     setLoading: (state, { payload }: PayloadAction<boolean>) => {
-      state.isLoading = payload;
+      state.isLoading = false;
     },
     setAuthSuccess: (state, { payload }: PayloadAction<CurrentUser>) => {
       state.currentUser = payload;
