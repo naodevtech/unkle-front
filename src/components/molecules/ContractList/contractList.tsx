@@ -43,6 +43,7 @@ function ContractList() {
             return (
               <Contract
                 key={contract.id}
+                id={contract.id}
                 icon={contract.icon}
                 reference={contract.name}
                 name={contract.name}

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { authSelector } from "../../../store/auth/authSlice";
 
@@ -7,11 +8,17 @@ import { IContract } from "../../../store/contracts/contractsSlice";
 import "./_contract.scss";
 
 const Contract: React.FunctionComponent<IContract> = ({
+  id,
   icon,
   name,
   reference,
 }) => {
+  let navigate = useNavigate();
   const { currentUser } = useSelector(authSelector);
+
+  const redirectToContractDetail = (id: string | undefined) => {
+    return navigate(`/contract/${id}`);
+  };
 
   return (
     <div className="card contract_card">
@@ -29,6 +36,9 @@ const Contract: React.FunctionComponent<IContract> = ({
             ? "btn--squared-danger"
             : "btn--squared-primary"
         }`}
+        onClick={() => {
+          redirectToContractDetail(id);
+        }}
       >
         Voir le contrat
       </button>

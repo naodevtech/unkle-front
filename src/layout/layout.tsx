@@ -21,7 +21,6 @@ const Layout = ({ children }: Props) => {
       try {
         const user = await api.get("/me");
         dispatch(setAuthSuccess(user.data.data));
-        return navigate("/dashboard");
       } catch (error: any) {
         return navigate("/login");
       }

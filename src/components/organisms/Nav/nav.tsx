@@ -74,7 +74,7 @@ const Nav = () => {
               </NavLink>
             ) : null}
             <button
-              className="btn--rounded btn--rounded-primary"
+              className="btn--rounded btn--rounded--mobile btn--rounded-primary"
               onClick={() => logout()}
             >
               <span className="body-s--bold">Deconnexion</span>
