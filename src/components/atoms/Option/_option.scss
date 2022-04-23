@@ -1,0 +1,10 @@
+@import "../../../sass/helpers/mixins";
+
+.container_options {
+  @include media(minilaptop) {
+    width: 50%;
+  }
+  @include media(laptop) {
+    width: 50%;
+  }
+}

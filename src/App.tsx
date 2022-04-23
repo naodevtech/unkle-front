@@ -14,7 +14,7 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/login" element={<Login />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/" element={<Dashboard />} />
             <Route path="/contract/:id" element={<ContractDetails />} />
           </Routes>
         </Layout>

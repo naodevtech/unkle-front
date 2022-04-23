@@ -1,13 +1,25 @@
 @import "../helpers/mixins";
 
 .card {
-  background-color: rgba(248, 247, 247, 0.801);
-  height: 320px;
-  width: 400px;
-  border-radius: 10px;
-  margin: 1em;
-  padding: 2em;
-  @include media(tablet) {
-    width: 300px;
+  &--contract {
+    background-color: rgba(248, 247, 247, 0.801);
+    height: 320px;
+    width: 400px;
+    border-radius: 10px;
+    margin: 1em;
+    padding: 2em;
+    @include media(tablet) {
+      width: 300px;
+    }
+  }
+  &--option {
+    background-color: $primary-extra-light;
+    height: 55px;
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    margin: 1em 0;
+    border-radius: 0.5em;
   }
 }

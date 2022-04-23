@@ -76,7 +76,7 @@ function Login() {
     try {
       const user = await api.post("/login", credentials);
       dispatch(setAuthSuccess(user.data.data));
-      navigate(`/dashboard`);
+      navigate(`/`);
     } catch (error: any) {
       dispatch(setAuthFailed(error.response.data.message));
     }
