@@ -26,6 +26,18 @@ $this: ".btn";
         background-color: $error-dark;
       }
     }
+    &-success {
+      background-color: $success;
+      &:hover {
+        background-color: $success-dark;
+      }
+    }
+    &-warning {
+      background-color: $warning;
+      &:hover {
+        background-color: $warning-dark;
+      }
+    }
   }
   &--rounded {
     height: 30px;

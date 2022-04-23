@@ -13,6 +13,14 @@
   }
   &-m {
     font-family: $brand-font-primary-medium;
+    font-size: 22px;
+    &--light {
+      font-family: $brand-font-primary-light;
+      font-size: 22px;
+    }
+  }
+  &-s {
+    font-family: $brand-font-primary-medium;
     font-size: 17px;
   }
 }
@@ -50,4 +58,11 @@
 
 .hyphens {
   hyphens: auto;
+}
+
+hr {
+  height: 6px;
+  border: none;
+  width: 100px;
+  margin: 0.8em 0.3em;
 }

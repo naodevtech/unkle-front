@@ -21,9 +21,9 @@ const Contract: React.FunctionComponent<IContract> = ({
   };
 
   return (
-    <div className="card contract_card">
+    <div className="card--contract contract_card">
       <img className="icon_insurance" src={icon} alt="icon_insurance" />
-      <h2 className="heading-m secondary-color">{name}</h2>
+      <h2 className="heading-s secondary-color">{name}</h2>
       {currentUser?.role !== "admin" ? (
         <span className="body-s error-color underline">
           En attente de souscription
