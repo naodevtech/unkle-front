@@ -1,7 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
-import { authSelector, setAuthSuccess } from "../store/auth/authSlice";
+import {
+  authSelector,
+  setAuthFailed,
+  setAuthSuccess,
+} from "../store/auth/authSlice";
 
 import api from "../utils/api";
 
@@ -21,6 +25,7 @@ const Layout = ({ children }: Props) => {
       try {
         const user = await api.get("/me");
         dispatch(setAuthSuccess(user.data.data));
+        return navigate("/");
       } catch (error: any) {
         return navigate("/login");
       }
