@@ -4,28 +4,39 @@ import { useDispatch, useSelector } from "react-redux";
 import { authSelector } from "../../../store/auth/authSlice";
 import {
   contractsSelector,
+  setContractsFailed,
   setContractsSuccess,
 } from "../../../store/contracts/contractsSlice";
 
 import api from "../../../utils/api";
+import Alert from "../../atoms/Alert/alert";
 
 import Contract from "../../atoms/Contract/contract";
 
-import "./_contractList.scss";
+import "./_contractsList.scss";
 
-function ContractList() {
+function ContractsList() {
   const dispatch = useDispatch();
   const { currentUser } = useSelector(authSelector);
   const { contracts } = useSelector(contractsSelector);
 
   useEffect(() => {
     const getAllContracts = async () => {
-      const contractsFetched = await api.get("/contracts");
-      dispatch(setContractsSuccess(contractsFetched.data.data));
+      try {
+        const contractsFetched = await api.get("/contracts");
+        dispatch(setContractsSuccess(contractsFetched.data.data));
+      } catch (error: any) {
+        dispatch(setContractsFailed(error.response.data.message));
+      }
     };
     const getAllContractsClient = async (userId: string | undefined) => {
-      const contractsFetched = await api.get(`/userContracts/${userId}`);
-      dispatch(setContractsSuccess(contractsFetched.data.data));
+      try {
+        const contractsFetched = await api.get(`/userContracts/${userId}`);
+        dispatch(setContractsSuccess(contractsFetched.data.data));
+        console.log(contracts);
+      } catch (error: any) {
+        dispatch(setContractsFailed(error.response.data.message));
+      }
     };
     const getContractsByUser = async () => {
       if (currentUser?.role === "admin") {
@@ -38,7 +49,7 @@ function ContractList() {
 
   return (
     <div className="container_contract_list">
-      {contracts
+      {contracts.length > 0
         ? contracts.map((contract) => {
             return (
               <Contract
@@ -56,4 +67,4 @@ function ContractList() {
   );
 }
 
-export default ContractList;
+export default ContractsList;

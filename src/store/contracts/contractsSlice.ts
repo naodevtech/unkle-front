@@ -16,6 +16,8 @@ export interface IContract {
   status: string;
   createdAt?: string;
   updatedAt?: string;
+  beginingDate?: string;
+  endDate?: string;
   ContractOptions?: IOption[];
 }
 

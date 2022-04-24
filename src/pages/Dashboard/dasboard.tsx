@@ -1,5 +1,5 @@
 import React from "react";
-import ContractList from "../../components/molecules/ContractList/contractList";
+import ContractsList from "../../components/molecules/ContractsList/contractsList";
 
 import "./_dashboard.scss";
 
@@ -9,7 +9,7 @@ function Dashboard() {
       <div className="container_dashboard">
         <h1 className="heading-l secondary-color">Tous les contrats</h1>
         <hr className="bg-primary" />
-        <ContractList />
+        <ContractsList />
       </div>
     </div>
   );
