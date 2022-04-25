@@ -4,8 +4,6 @@ import { IOption } from "../../../store/contracts/contractsSlice";
 
 import Option from "../../atoms/Option/option";
 
-import api from "../../../utils/api";
-
 import "./_optionsList.scss";
 
 type OptionList = {

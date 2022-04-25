@@ -8,16 +8,12 @@ import {
   setContractsFailed,
   setContractSuccess,
 } from "../../store/contracts/contractsSlice";
-import {
-  contractsSelector,
-  IOption,
-} from "../../store/contracts/contractsSlice";
+import { contractsSelector } from "../../store/contracts/contractsSlice";
 
 import dateIcon from "../../assets/iconography/date.svg";
 import optionIcon from "../../assets/iconography/option.svg";
 
 import "./_contractDetails.scss";
-import Option from "../../components/atoms/Option/option";
 import { authSelector } from "../../store/auth/authSlice";
 import { OptionsList } from "../../components/molecules/OptionsList/optionsList";
 

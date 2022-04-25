@@ -1,11 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
-import {
-  authSelector,
-  setAuthFailed,
-  setAuthSuccess,
-} from "../store/auth/authSlice";
+import { authSelector, setAuthSuccess } from "../store/auth/authSlice";
 
 import api from "../utils/api";
 
@@ -34,7 +30,7 @@ const Layout = ({ children }: Props) => {
     if (!isAuth) {
       return navigate("/login");
     }
-  }, []);
+  }, [isAuth, navigate]);
 
   return (
     <>
