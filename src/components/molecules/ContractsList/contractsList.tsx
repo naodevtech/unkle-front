@@ -33,7 +33,6 @@ function ContractsList() {
       try {
         const contractsFetched = await api.get(`/userContracts/${userId}`);
         dispatch(setContractsSuccess(contractsFetched.data.data));
-        console.log(contracts);
       } catch (error: any) {
         dispatch(setContractsFailed(error.response.data.message));
       }
@@ -43,11 +42,11 @@ function ContractsList() {
         return await getAllContracts();
       }
       if (currentUser?.id) {
-        getAllContractsClient(currentUser?.id);
+        return await getAllContractsClient(currentUser?.id);
       }
     };
     getContractsByUser();
-  }, [currentUser, dispatch, contracts]);
+  }, [currentUser, dispatch]);
 
   return (
     <div className="container_contract_list">
