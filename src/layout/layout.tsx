@@ -24,14 +24,17 @@ const Layout = ({ children }: Props) => {
     const getAuth = async () => {
       try {
         const user = await api.get("/me");
-        dispatch(setAuthSuccess(user.data.data));
-        return navigate("/");
-      } catch (error: any) {
-        return navigate("/login");
-      }
+        return dispatch(setAuthSuccess(user.data.data));
+      } catch (error: any) {}
     };
     getAuth();
   }, [dispatch, navigate]);
+
+  useEffect(() => {
+    if (!isAuth) {
+      return navigate("/login");
+    }
+  }, []);
 
   return (
     <>

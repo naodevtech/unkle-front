@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
@@ -35,7 +35,13 @@ function Login() {
   const [password, setPassword] = useState("");
   const [fields, setFields] = useState<Field[]>(fieldsOptions);
   const dispatch = useDispatch();
-  const { error } = useSelector(authSelector);
+  const { error, isAuth } = useSelector(authSelector);
+
+  useEffect(() => {
+    if (isAuth) {
+      navigate("/");
+    }
+  });
 
   const checkFieldValidity = (currentField: Field, value: string) => {
     const regexp = new RegExp(currentField.regexp);
