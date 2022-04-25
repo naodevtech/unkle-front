@@ -42,27 +42,31 @@ function ContractsList() {
       if (currentUser?.role === "admin") {
         return await getAllContracts();
       }
-      getAllContractsClient(currentUser?.id);
+      if (currentUser?.id) {
+        getAllContractsClient(currentUser?.id);
+      }
     };
     getContractsByUser();
   }, [currentUser, dispatch]);
 
   return (
     <div className="container_contract_list">
-      {contracts.length > 0
-        ? contracts.map((contract) => {
-            return (
-              <Contract
-                key={contract.id}
-                id={contract.id}
-                icon={contract.icon}
-                reference={contract.name}
-                name={contract.name}
-                status={contract.name}
-              />
-            );
-          })
-        : null}
+      {contracts.length > 0 ? (
+        contracts.map((contract) => {
+          return (
+            <Contract
+              key={contract.id}
+              id={contract.id}
+              icon={contract.icon}
+              reference={contract.name}
+              name={contract.name}
+              status={contract.name}
+            />
+          );
+        })
+      ) : (
+        <Alert type="error" message="Il n'y a pas de contrats !" />
+      )}
     </div>
   );
 }
