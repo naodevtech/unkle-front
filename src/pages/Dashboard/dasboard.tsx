@@ -1,4 +1,5 @@
 import React from "react";
+
 import ContractsList from "../../components/molecules/ContractsList/contractsList";
 
 import "./_dashboard.scss";

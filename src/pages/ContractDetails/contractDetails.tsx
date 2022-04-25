@@ -40,7 +40,6 @@ function ContractDetails() {
       try {
         const userContract = await api.get(`/userContracts/${userId}/${id}`);
         dispatch(setContractSuccess(userContract.data.data));
-        console.log(contract);
       } catch (error: any) {
         dispatch(setContractsFailed(error.response.data.message));
       }
