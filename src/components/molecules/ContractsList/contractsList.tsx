@@ -47,7 +47,7 @@ function ContractsList() {
       }
     };
     getContractsByUser();
-  }, [currentUser, dispatch]);
+  }, [currentUser, dispatch, contracts]);
 
   return (
     <div className="container_contract_list">
