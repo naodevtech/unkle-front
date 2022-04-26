@@ -1,7 +1,7 @@
-# Getting Started with Create React App
+## Context app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+"L'application a pour but de faciliter la souscription des clients pour des assurances chez Unkle lorsqu'ils nous contacte dans nos centres d'appels. Les administrateurs se chargent de créer des comptes utilisateurs clients et peuvent affilier des contrats aux clients en fonction de leurs demandes afin que ceux-là apparaissent dans leurs Dashboard pour qu'ils puissent y souscrire."
+ 
 ## Available Scripts
 
 In the project directory, you can run:
